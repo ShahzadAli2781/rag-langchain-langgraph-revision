@@ -1,19 +1,26 @@
 text = """
 RAG stands for Retrieval-Augmented Generation.
-RAG retrieves relevant information.
+RAG retrieves relevant information before generating an answer.
 The retrieved information is given to an LLM.
 The LLM generates the final answer.
 """
 
-chunk_size = 50
+chunk_size = 60
+overlap = 10
 
 chunks = []
 
-for i in range(0, len(text), chunk_size):
+start = 0
 
-    chunk = text[i:i + chunk_size]
+while start < len(text):
+
+    end = start + chunk_size
+
+    chunk = text[start:end]
 
     chunks.append(chunk)
+
+    start = end - overlap
 
 
 for chunk in chunks:
