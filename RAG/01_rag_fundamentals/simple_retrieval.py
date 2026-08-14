@@ -28,6 +28,10 @@ for document in documents:
     results.append((document, score))
 
 
+results.sort(
+    key=lambda x: x[1],
+    reverse=True
+)
 
 
 print("Query:", query)

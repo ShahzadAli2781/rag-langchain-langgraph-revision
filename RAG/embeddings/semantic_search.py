@@ -17,6 +17,7 @@ query = "How does RAG find information?"
 
 
 query_vector = model.encode([query])
+
 document_vectors = model.encode(documents)
 
 
